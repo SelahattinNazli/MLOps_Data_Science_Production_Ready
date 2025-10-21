@@ -6,7 +6,7 @@ project_name = "us_visa"
 list_of_files = [
     f"{project_name}/__init__.py",
     f"{project_name}/components/__init__.py",
-    f"{project_name}/components/data_ingestion.py",  
+    f"{project_name}/components/data_ingestion.py",
     f"{project_name}/components/data_validation.py",
     f"{project_name}/components/data_transformation.py",
     f"{project_name}/components/model_trainer.py",
@@ -34,19 +34,14 @@ list_of_files = [
     "config/schema.yaml",
 ]
 
+
 for filepath in list_of_files:
     filepath = Path(filepath)
     filedir, filename = os.path.split(filepath)
-    
     if filedir != "":
         os.makedirs(filedir, exist_ok=True)
-        print(f"Created directory: {filedir}")
-    
     if (not os.path.exists(filepath)) or (os.path.getsize(filepath) == 0):
         with open(filepath, "w") as f:
             pass
-        print(f"Created file: {filepath}")
     else:
-        print(f"File already exists: {filepath}")
-
-print("\nProject structure created successfully!")
+        print(f"file is already present at: {filepath}")
