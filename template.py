@@ -1,4 +1,4 @@
-import osx
+import os
 from pathlib import Path
 
 project_name = "us_visa"
